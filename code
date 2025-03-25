@@ -1,27 +1,35 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, data): # class for data and next values 
         self.data = data
         self.next = None
 
-def convert_list_to_linked_list(list_data):
-    if not list_data:
-        return None
-    
-    head = Node(list_data[0])
-    current = head
-    for i in range(1, len(list_data)):
-        current.next = Node(list_data[i])
-        current = current.next
-    return head
+def traverseAndPrint(head):   # makes the function for printing the names
+    currentNode = head
+    while currentNode:
+        print(currentNode.data, end=" -- ")
+        currentNode = currentNode.next
+    print("...")
 
-def print_linked_list(head):
-    current = head
-    while current:
-        print(current.data, end=" -> ")
-        current = current.next
-    print("None")
+node1 = Node('Ryan') # define all the names in the list
+node2 = Node('Nate')
+node3 = Node('Leo')
+node4 = Node('Mason')
+node5 = Node('Shahood') 
+node6 = Node('Chris')
+node7 = Node('Munatg')
+node8 = Node('Jaiden')
+node9 = Node('Marcos')
+node10 = Node('Aidan')
+node11 = Node('Gavin')
 
-# Example usage:
-my_list = [1, 2, 3, 4, 5]
-linked_list_head = convert_list_to_linked_list(my_list)
-print_linked_list(linked_list_head)
+node1.next = node2 #define all the next values in the list
+node2.next = node3
+node3.next = node4
+node4.next = node5
+node5.next = node6
+node6.next = node7
+node7.next = node8
+node8.next = node9
+node9.next = node10
+node10.next = node11
+traverseAndPrint(node1) # prints the lost starting at the listed node in the list
